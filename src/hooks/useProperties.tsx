@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useCallback } from 'react';
+import React, { createContext, useState, useContext, useCallback, useEffect } from 'react';
 import fakeProperties from "../fake-data/fakeProperties";
 import { Property } from "../types";
 
@@ -14,7 +14,11 @@ type Props = {
 };
 
 export const PropertiesProvider: React.FC<Props> = ({ children }) => {
-  const [properties, _setProperties] = useState<Property[]>(fakeProperties);
+  const [properties, setProperties] = useState<Property[]>(fakeProperties);
+
+  useEffect(() => {
+    setProperties(fakeProperties);
+  }, []);
 
   const getPropertyById = useCallback((id: number) => {
     return properties.find( property => property.id === id);
