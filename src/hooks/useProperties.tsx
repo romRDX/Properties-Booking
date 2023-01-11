@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const PropertiesProvider: React.FC<Props> = ({ children }) => {
-  const [ properties, setProperties] = useState<Property[]>(fakeProperties);
+  const [properties, _setProperties] = useState<Property[]>(fakeProperties);
 
   const getPropertyById = useCallback((id: number) => {
     return properties.find( property => property.id === id);

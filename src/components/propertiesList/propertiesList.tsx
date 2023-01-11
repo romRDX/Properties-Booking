@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import fakeProperties from '../../fake-data/fakeProperties';
 import { useFilter } from '../../hooks/useFilter';
 import { useProperties } from '../../hooks/useProperties';
 import { Property } from '../../types';
@@ -10,7 +9,6 @@ import { Container } from './propertiesList.styles';
 const PropertiesList = () => {
   
   const { properties } = useProperties();
-  // const properties = fakeProperties;
   const { filter } = useFilter();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,7 +36,6 @@ const PropertiesList = () => {
       <ul>
         {
           propertiesList?.map((property) => (
-          // properties.map((property) => (
             <PropertyItem key={property.id} property={property} />
           ))
         }

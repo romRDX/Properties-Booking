@@ -31,7 +31,7 @@ const Pagination = ({ currentPage, totalPages, setCurrentPage }: PaginationProps
                         <li 
                             onClick={() => setCurrentPage(index+1)}
                             key={index}
-                            className={ currentPage == index+1 ? "isActive" : ""}
+                            className={ currentPage === index+1 ? "isActive" : ""}
                         >
                             {index+1}
                         </li>
